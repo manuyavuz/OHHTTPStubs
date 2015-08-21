@@ -51,7 +51,7 @@ const double OHHTTPStubsDownloadSpeedWifi   =- 12000 / 8; // kbps -> KB/s
 
 #pragma mark > Building response from NSData
 
-+(instancetype)responseWithData:(NSData*)data
++(instancetype)responseWithData:(nullable NSData*)data
                      statusCode:(int)statusCode
                         headers:(nullable NSDictionary*)httpHeaders
 {
@@ -154,7 +154,7 @@ const double OHHTTPStubsDownloadSpeedWifi   =- 12000 / 8; // kbps -> KB/s
     return self;
 }
 
--(instancetype)initWithData:(NSData*)data
+-(instancetype)initWithData:(nullable NSData*)data
                  statusCode:(int)statusCode
                     headers:(nullable NSDictionary*)httpHeaders
 {

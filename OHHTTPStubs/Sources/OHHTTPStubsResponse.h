@@ -109,7 +109,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param httpHeaders The HTTP Headers to return in the response
  *  @return An `OHHTTPStubsResponse` describing the corresponding response to return by the stub
  */
-+(instancetype)responseWithData:(NSData*)data
++(instancetype)responseWithData:(nullable NSData*)data
                      statusCode:(int)statusCode
                         headers:(nullable NSDictionary*)httpHeaders;
 
@@ -243,7 +243,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @return An `OHHTTPStubsResponse` describing the corresponding response to return by the stub
  */
--(instancetype)initWithData:(NSData*)data
+-(instancetype)initWithData:(nullable NSData*)data
                  statusCode:(int)statusCode
                     headers:(nullable NSDictionary*)httpHeaders;
 

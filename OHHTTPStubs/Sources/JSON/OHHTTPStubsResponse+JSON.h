@@ -48,7 +48,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @note This method typically calls `responseWithData:statusCode:headers:`, passing the serialized JSON
  *        object as the data parameter and adding the Content-Type header if necessary.
  */
-+ (instancetype)responseWithJSONObject:(id)jsonObject
++ (instancetype)responseWithJSONObject:(nullable id)jsonObject
                             statusCode:(int)statusCode
                                headers:(nullable NSDictionary *)httpHeaders;
 

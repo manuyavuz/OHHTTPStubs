@@ -29,7 +29,7 @@
 
 /*! @name Building a response from JSON objects */
 
-+ (instancetype)responseWithJSONObject:(id)jsonObject
++ (instancetype)responseWithJSONObject:(nullable id)jsonObject
                             statusCode:(int)statusCode
                                headers:(nullable NSDictionary *)httpHeaders
 {
@@ -39,8 +39,9 @@
         mutableHeaders[@"Content-Type"] = @"application/json";
         httpHeaders = [NSDictionary dictionaryWithDictionary:mutableHeaders]; // make immutable again
     }
-    
-    return [self responseWithData:[NSJSONSerialization dataWithJSONObject:jsonObject options:0 error:nil]
+
+	NSData *data = jsonObject ? [NSJSONSerialization dataWithJSONObject:jsonObject options:0 error:nil] : nil;
+    return [self responseWithData:data
                        statusCode:statusCode
                           headers:httpHeaders];
 }
